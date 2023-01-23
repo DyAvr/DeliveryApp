@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DeliveryApp.Models.Order>
+
+@{
+    ViewData["Title"] = "Список заказов";
+}
+
+<h2 class="text-center">Список заказов</h2>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Номер заказа</th>
+            <th>Город отправителя</th>
+            <th>Адрес отправителя</th>
+            <th>Город получателя</th>
+            <th>Адрес получателя</th>
+            <th>Вес груза</th>
+            <th>Дата забора груза</th>
+            <th hidden="hidden"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var order in Model) {
+            <tr onclick="window.location='/Orders/Details/' + @order.Id">
+                <td>@order.OrderNumber</td>
+                <td>@order.FromCity</td>
+                <td>@order.FromAddress</td>
+                <td>@order.ToCity</td>
+                <td>@order.ToAddress</td>
+                <td>@order.Weight</td>
+                <td>@order.PickupDate.ToShortDateString()</td>
+                <td hidden="hidden"></td>
+            </tr>
+        }
+    </tbody>
+</table>

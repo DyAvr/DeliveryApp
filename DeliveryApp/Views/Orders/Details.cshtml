@@ -1,0 +1,30 @@
+﻿@model DeliveryApp.Models.Order
+
+<h2 class="text-center">Просмотр заказа</h2>
+<div>
+    <h4>Номер заказа: @Model.OrderNumber</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Город отправителя:</dt>
+        <dd class="col-sm-10">@Model.FromCity</dd>
+
+        <dt class="col-sm-2">Адрес отправителя:</dt>
+        <dd class="col-sm-10">@Model.FromAddress</dd>
+
+        <dt class="col-sm-2">Город получателя:</dt>
+        <dd class="col-sm-10">@Model.ToCity</dd>
+
+        <dt class="col-sm-2">Адрес получателя:</dt>
+        <dd class="col-sm-10">@Model.ToAddress</dd>
+
+        <dt class="col-sm-2">Вес груза:</dt>
+        <dd class="col-sm-10">@Model.Weight</dd>
+
+        <dt class="col-sm-2">Дата забора груза:</dt>
+        <dd class="col-sm-10">@Model.PickupDate.ToString("yyyy-MM-dd")</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Вернутся к списку</a>
+</div>
+

@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Приложение доставки";
+}
+
+<div class="jumbotron text-center">
+    <h1>Добро пожаловать в приложение доставки!</h1>
+    <p>Посмотреть и создать заказы на доставку</p>
+    <a href="@Url.Action("Index", "Orders")" class="btn btn-primary">Посмотреть заказы</a>
+    <a href="@Url.Action("Create", "Orders")" class="btn btn-success">Создать заказ</a>
+</div>
