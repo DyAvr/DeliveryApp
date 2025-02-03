@@ -1,4 +1,5 @@
 using System.Net;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Versta.DeliveryApp.Domain.Exceptions;
 using Versta.DeliveryApp.Infrastructure.Exceptions;
@@ -41,15 +42,16 @@ public class ErrorHandlingMiddleware(
                 errorResponse.StackTrace = environment.IsDevelopment() ? exception.StackTrace : null;
                 break;
 
-            case DomainException:
+            case DomainException or ArgumentException:
                 context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 errorResponse.Message = exception.Message;
                 errorResponse.StackTrace = environment.IsDevelopment() ? exception.StackTrace : null;
                 break;
 
-            case ArgumentException:
+            case ValidationException { Errors: { } errors }:
+                var firstError = errors.First();
                 context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                errorResponse.Message = exception.Message;
+                errorResponse.Message = firstError.ErrorMessage;
                 errorResponse.StackTrace = environment.IsDevelopment() ? exception.StackTrace : null;
                 break;
 

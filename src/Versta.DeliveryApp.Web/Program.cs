@@ -1,5 +1,4 @@
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Versta.DeliveryApp.Application;
 using Versta.DeliveryApp.Application.Validators;
@@ -10,7 +9,6 @@ using Versta.DeliveryApp.Web.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateOrderDtoValidator>();
 
 builder.Services.AddInfrastructure(builder.Configuration);
