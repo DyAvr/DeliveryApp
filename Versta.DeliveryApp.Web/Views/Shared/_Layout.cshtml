@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - DeliveryApp</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico" />
+</head>
+<body>
+<div class="container">
+    @RenderBody()
+</div>
+
+@await RenderSectionAsync("Scripts", required: false)
+<script src="~/js/site.js"></script>
+</body>
+</html>

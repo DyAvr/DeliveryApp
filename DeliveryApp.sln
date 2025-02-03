@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{5C94326B-BB6D-4350-96A5-59DA8E307F24}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC60720B-DA5F-4BB0-A819-D5789981D403}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D4EB40FB-E5C2-459D-BE33-5B9F6AA9ABC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versta.DeliveryApp.Domain", "Versta.DeliveryApp.Domain\Versta.DeliveryApp.Domain.csproj", "{72E0910E-19DF-48C4-9F47-068BB4080F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versta.DeliveryApp.Application", "Versta.DeliveryApp.Application\Versta.DeliveryApp.Application.csproj", "{F53DAB42-7240-42A8-85C7-32B2C8AB082C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versta.DeliveryApp.Infrastructure", "Versta.DeliveryApp.Infrastructure\Versta.DeliveryApp.Infrastructure.csproj", "{E4982797-27AC-413D-AB37-2CB18CEDB7D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versta.DeliveryApp.Web", "Versta.DeliveryApp.Web\Versta.DeliveryApp.Web.csproj", "{35D34D88-95B9-4A3C-93BC-2A0171982AAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72E0910E-19DF-48C4-9F47-068BB4080F5F} = {CC60720B-DA5F-4BB0-A819-D5789981D403}
+		{F53DAB42-7240-42A8-85C7-32B2C8AB082C} = {CC60720B-DA5F-4BB0-A819-D5789981D403}
+		{E4982797-27AC-413D-AB37-2CB18CEDB7D4} = {CC60720B-DA5F-4BB0-A819-D5789981D403}
+		{35D34D88-95B9-4A3C-93BC-2A0171982AAD} = {CC60720B-DA5F-4BB0-A819-D5789981D403}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72E0910E-19DF-48C4-9F47-068BB4080F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E0910E-19DF-48C4-9F47-068BB4080F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E0910E-19DF-48C4-9F47-068BB4080F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E0910E-19DF-48C4-9F47-068BB4080F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53DAB42-7240-42A8-85C7-32B2C8AB082C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53DAB42-7240-42A8-85C7-32B2C8AB082C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53DAB42-7240-42A8-85C7-32B2C8AB082C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53DAB42-7240-42A8-85C7-32B2C8AB082C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4982797-27AC-413D-AB37-2CB18CEDB7D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4982797-27AC-413D-AB37-2CB18CEDB7D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4982797-27AC-413D-AB37-2CB18CEDB7D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4982797-27AC-413D-AB37-2CB18CEDB7D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35D34D88-95B9-4A3C-93BC-2A0171982AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D34D88-95B9-4A3C-93BC-2A0171982AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D34D88-95B9-4A3C-93BC-2A0171982AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D34D88-95B9-4A3C-93BC-2A0171982AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

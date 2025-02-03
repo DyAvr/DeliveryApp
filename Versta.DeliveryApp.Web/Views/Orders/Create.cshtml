@@ -1,0 +1,95 @@
+@{
+    ViewData["Title"] = "Создать заказ";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<!-- Контейнер для отображения ошибок -->
+<div id="error-container" style="display:none; background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 15px; color: #721c24;"></div>
+
+<form id="createOrderForm">
+    <div class="form-group">
+        <label for="SenderCity">Город отправителя</label>
+        <input type="text" id="SenderCity" name="SenderCity" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="SenderAddress">Адрес отправителя</label>
+        <input type="text" id="SenderAddress" name="SenderAddress" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="ReceiverCity">Город получателя</label>
+        <input type="text" id="ReceiverCity" name="ReceiverCity" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="ReceiverAddress">Адрес получателя</label>
+        <input type="text" id="ReceiverAddress" name="ReceiverAddress" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="Weight">Вес</label>
+        <input type="number" step="0.01" id="Weight" name="Weight" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="PickupDate">Дата забора груза</label>
+        <input type="date" id="PickupDate" name="PickupDate" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Создать заказ</button>
+</form>
+
+@section Scripts {
+    <script>
+        // Обработчик отправки формы
+        document.getElementById("createOrderForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+            const errorContainer = document.getElementById("error-container");
+            errorContainer.style.display = "none";
+            errorContainer.innerHTML = "";
+
+            const data = {
+                SenderCity: document.getElementById("SenderCity").value,
+                SenderAddress: document.getElementById("SenderAddress").value,
+                ReceiverCity: document.getElementById("ReceiverCity").value,
+                ReceiverAddress: document.getElementById("ReceiverAddress").value,
+                Weight: parseFloat(document.getElementById("Weight").value),
+                PickupDate: document.getElementById("PickupDate").value
+            };
+
+            try {
+                const response = await fetch("@Url.Action("Create", "Orders")", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    displayError(errorData);
+                    return;
+                }
+
+                const result = await response.json();
+                if (result.success) {
+                    alert("Заказ создан: " + result.order.orderNumber);
+                    window.location.href = "@Url.Action("Index", "Orders")";
+                } else {
+                    displayError({ Message: "Ошибка создания заказа" });
+                }
+            } catch (error) {
+                displayError({ Message: "Ошибка создания заказа: " + error });
+            }
+        });
+
+        // Функция для отображения ошибок на странице
+        function displayError(errorData) {
+            const errorContainer = document.getElementById("error-container");
+            let html = "<strong>Ошибка:</strong><br/>";
+            html += errorData.message;
+            if (errorData.stackTrace !== undefined) {
+                html += "<br/>" + errorData.stackTrace;
+            }
+            errorContainer.innerHTML = html;
+            errorContainer.style.display = "block";
+        }
+    </script>
+}

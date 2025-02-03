@@ -1,0 +1,35 @@
+@model Versta.DeliveryApp.Application.DTOs.OrderDto
+
+@{
+    ViewData["Title"] = "Детали заказа";
+}
+
+<h2>Детали заказа</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">Номер заказа</dt>
+    <dd class="col-sm-10">@Model.OrderNumber</dd>
+
+    <dt class="col-sm-2">Город отправителя</dt>
+    <dd class="col-sm-10">@Model.SenderCity</dd>
+
+    <dt class="col-sm-2">Адрес отправителя</dt>
+    <dd class="col-sm-10">@Model.SenderAddress</dd>
+
+    <dt class="col-sm-2">Город получателя</dt>
+    <dd class="col-sm-10">@Model.ReceiverCity</dd>
+
+    <dt class="col-sm-2">Адрес получателя</dt>
+    <dd class="col-sm-10">@Model.ReceiverAddress</dd>
+
+    <dt class="col-sm-2">Вес</dt>
+    <dd class="col-sm-10">@Model.Weight</dd>
+
+    <dt class="col-sm-2">Дата забора</dt>
+    <dd class="col-sm-10">@Model.PickupDate</dd>
+
+    <dt class="col-sm-2">Дата создания</dt>
+    <dd class="col-sm-10">@Model.CreatedAt</dd>
+</dl>
+
+<a asp-action="Index" class="btn btn-secondary">Вернуться к списку</a>
