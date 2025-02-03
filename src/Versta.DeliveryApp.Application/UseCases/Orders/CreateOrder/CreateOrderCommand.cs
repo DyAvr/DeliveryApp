@@ -1,7 +1,7 @@
 using MediatR;
 using Versta.DeliveryApp.Application.DTOs;
 
-namespace Versta.DeliveryApp.Application.UseCases.Commands.CreateOrder;
+namespace Versta.DeliveryApp.Application.UseCases.Orders.CreateOrder;
 
 public record CreateOrderCommand(
     string SenderCity,

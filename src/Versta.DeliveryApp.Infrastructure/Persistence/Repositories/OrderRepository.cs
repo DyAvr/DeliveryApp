@@ -3,7 +3,7 @@ using Versta.DeliveryApp.Domain.Entities;
 using Versta.DeliveryApp.Domain.Interfaces;
 using Versta.DeliveryApp.Infrastructure.Data;
 
-namespace Versta.DeliveryApp.Infrastructure.Repositories;
+namespace Versta.DeliveryApp.Infrastructure.Persistence.Repositories;
 
 public class OrderRepository(ApplicationDbContext context) : IOrderRepository
 {

@@ -3,7 +3,7 @@ using Versta.DeliveryApp.Application.DTOs;
 using Versta.DeliveryApp.Application.Services;
 using Versta.DeliveryApp.Infrastructure.Exceptions;
 
-namespace Versta.DeliveryApp.Application.UseCases.Queries.GetOrderByNumber;
+namespace Versta.DeliveryApp.Application.UseCases.Orders.GetOrderByNumber;
 
 public class GetOrderByNumberQueryHandler(
     IOrderService orderService

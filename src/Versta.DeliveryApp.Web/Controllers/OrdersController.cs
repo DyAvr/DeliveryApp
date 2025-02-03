@@ -1,8 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Versta.DeliveryApp.Application.UseCases.Commands.CreateOrder;
-using Versta.DeliveryApp.Application.UseCases.Queries.GetOrderByNumber;
-using Versta.DeliveryApp.Application.UseCases.Queries.GetOrders;
+using Versta.DeliveryApp.Application.UseCases.Orders.CreateOrder;
+using Versta.DeliveryApp.Application.UseCases.Orders.GetOrderByNumber;
+using Versta.DeliveryApp.Application.UseCases.Orders.GetOrders;
 
 namespace Versta.DeliveryApp.Web.Controllers;
 

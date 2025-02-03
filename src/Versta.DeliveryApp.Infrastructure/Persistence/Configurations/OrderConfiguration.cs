@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Versta.DeliveryApp.Domain.Entities;
 
-namespace Versta.DeliveryApp.Infrastructure.Data.Configurations;
+namespace Versta.DeliveryApp.Infrastructure.Persistence.Configurations;
 
 public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {

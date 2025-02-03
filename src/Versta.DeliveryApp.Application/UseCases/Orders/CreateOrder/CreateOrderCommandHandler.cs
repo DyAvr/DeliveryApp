@@ -2,7 +2,7 @@ using MediatR;
 using Versta.DeliveryApp.Application.DTOs;
 using Versta.DeliveryApp.Application.Services;
 
-namespace Versta.DeliveryApp.Application.UseCases.Commands.CreateOrder;
+namespace Versta.DeliveryApp.Application.UseCases.Orders.CreateOrder;
 
 public class CreateOrderCommandHandler(
     IOrderService orderService

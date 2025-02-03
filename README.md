@@ -9,7 +9,7 @@ Database: PostgreSQL </br>
 ORM: EF </br>
 Frontend: ASP.NET MVC </br>
 Валидация: FluentValidation </br>
-Архитектура: Clean Architecture, DDD, CQRS (с использованием MediatR) </br>
+Архитектура: Clean Architecture, DDD, CQRS via MediatR </br>
 Контейнеризация: Docker </br>
 
 ## Инструкция по запуску
@@ -20,3 +20,17 @@ Frontend: ASP.NET MVC </br>
     docker-compose up -d
     ```
 3. Запустите приложение.
+
+## Инструкция по добавлению миграции
+
+В корневой папке выполнить команды:
+```BASH
+dotnet tool install --global dotnet-ef
+```
+```BASH
+dotnet ef migrations add НазваниеМиграции ^
+  --project .\src\Versta.DeliveryApp.Infrastructure ^
+  --startup-project .\src\Versta.DeliveryApp.Web ^
+  --output-dir Persistence\Migrations
+```
+

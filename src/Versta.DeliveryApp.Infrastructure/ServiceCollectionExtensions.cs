@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Versta.DeliveryApp.Domain.Interfaces;
 using Versta.DeliveryApp.Infrastructure.Data;
-using Versta.DeliveryApp.Infrastructure.Repositories;
+using Versta.DeliveryApp.Infrastructure.Persistence.Repositories;
 
 namespace Versta.DeliveryApp.Infrastructure;
 
