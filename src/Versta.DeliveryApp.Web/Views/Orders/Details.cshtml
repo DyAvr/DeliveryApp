@@ -4,32 +4,43 @@
     ViewData["Title"] = "Детали заказа";
 }
 
-<h2>Детали заказа</h2>
+<h2>@ViewData["Title"]</h2>
 
-<dl class="row">
-    <dt class="col-sm-2">Номер заказа</dt>
-    <dd class="col-sm-10">@Model.OrderNumber</dd>
-
-    <dt class="col-sm-2">Город отправителя</dt>
-    <dd class="col-sm-10">@Model.SenderCity</dd>
-
-    <dt class="col-sm-2">Адрес отправителя</dt>
-    <dd class="col-sm-10">@Model.SenderAddress</dd>
-
-    <dt class="col-sm-2">Город получателя</dt>
-    <dd class="col-sm-10">@Model.ReceiverCity</dd>
-
-    <dt class="col-sm-2">Адрес получателя</dt>
-    <dd class="col-sm-10">@Model.ReceiverAddress</dd>
-
-    <dt class="col-sm-2">Вес</dt>
-    <dd class="col-sm-10">@Model.Weight</dd>
-
-    <dt class="col-sm-2">Дата забора</dt>
-    <dd class="col-sm-10">@Model.PickupDate</dd>
-
-    <dt class="col-sm-2">Дата создания</dt>
-    <dd class="col-sm-10">@Model.CreatedAt</dd>
-</dl>
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Номер заказа</th>
+        <td>@Model.OrderNumber</td>
+    </tr>
+    <tr>
+        <th>Город отправителя</th>
+        <td>@Model.SenderCity</td>
+    </tr>
+    <tr>
+        <th>Адрес отправителя</th>
+        <td>@Model.SenderAddress</td>
+    </tr>
+    <tr>
+        <th>Город получателя</th>
+        <td>@Model.ReceiverCity</td>
+    </tr>
+    <tr>
+        <th>Адрес получателя</th>
+        <td>@Model.ReceiverAddress</td>
+    </tr>
+    <tr>
+        <th>Вес</th>
+        <td>@Model.Weight</td>
+    </tr>
+    <tr>
+        <th>Дата забора</th>
+        <td>@Model.PickupDate</td>
+    </tr>
+    <tr>
+        <th>Дата создания</th>
+        <td>@Model.CreatedAt</td>
+    </tr>
+    </tbody>
+</table>
 
 <a asp-action="Index" class="btn btn-secondary">Вернуться к списку</a>
